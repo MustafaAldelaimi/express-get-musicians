@@ -7,8 +7,8 @@ const port = 3000;
 
 //TODO
 
-app.get('/musicians', async (req, res) => {
-    const musicians = await Musician.findAll();
+app.get('/musicians/:id', async (req, res) => {
+    const musicians = await Musician.findByPk(req.params.id);
     res.json(musicians);
 })
 
